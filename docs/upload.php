@@ -24,7 +24,7 @@ if(!empty($_FILES))
 		Header ("Location:index.php?error=1");
 		exit();
 	}
-	if($_FILES["fileToUpload"]["size"] < 1000)
+	if($_FILES["fileToUpload"]["size"] < 9000)
 	{
 		Header ("Location:index.php?error=2");
 		exit();
