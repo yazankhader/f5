@@ -298,10 +298,10 @@ if len(asm_policies)> 0 and (asm_stats !="no" and asm_stats !="No" and asm_stats
 			with open(customer_name+"/"+asm_policy['name']+"/"+"raw_history_revisions.json", "w") as outfile:
 				json.dump(raw_history_revisions, outfile)							
 			
-			########################   Web Scapring  ########################
-			raw_web_scraping = get_web_scraping (bigip, asm_policy['id'], username, password)
-			with open(customer_name+"/"+asm_policy['name']+"/"+"raw_web_scraping.json", "w") as outfile:
-				json.dump(raw_web_scraping, outfile)							
+				########################   Web Scapring  ########################
+				#raw_web_scraping = get_web_scraping (bigip, asm_policy['id'], username, password)
+				#with open(customer_name+"/"+asm_policy['name']+"/"+"raw_web_scraping.json", "w") as outfile:
+				#	json.dump(raw_web_scraping, outfile)							
 			
 			########################   CSRF Protection  ########################
 			raw_csrf_protection = get_csrf_protection (bigip, asm_policy['id'], username, password)
