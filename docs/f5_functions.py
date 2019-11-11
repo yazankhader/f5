@@ -2287,19 +2287,6 @@ def get_csrf_protection(my_bigip, my_id, my_user, my_pass):
 
 	return raw_csrf_protection
 	
-def get_web_scraping(my_bigip, my_id, my_user, my_pass):
-	url = "https://" + my_bigip + "/mgmt/tm/asm/policies/" + my_id + "/web-scraping"
-	myResponse = requests.get(url, auth=(my_user, my_pass) , verify=False)
-	print (url)
-	print (myResponse.status_code)
-
-	if(myResponse.ok):
-		jData = json.loads(myResponse.content.decode('utf-8'))
-		raw_web_scraping = jData
-	else:
-		myResponse.raise_for_status()	
-
-	return raw_web_scraping
 
 def get_history_revisions(my_bigip, my_id, my_user, my_pass):
 	url = "https://" + my_bigip + "/mgmt/tm/asm/policies/" + my_id + "/history-revisions"
